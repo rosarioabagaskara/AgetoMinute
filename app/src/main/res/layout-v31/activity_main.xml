@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bGColor"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="CALCULATE YOUR"
+        android:textColor="@color/textColorBlue"
+        android:textColorHighlight="#F44336"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="AGE"
+        android:padding="@android:dimen/system_app_widget_background_radius"
+        android:textColor="@color/textColorBlue"
+        android:textColorHighlight="#F44336"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="IN MINUTES"
+        android:textColor="@color/textColorBlue"
+        android:textColorHighlight="#F44336"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_marginTop="16dp"
+        android:layout_width="302dp"
+        android:layout_height="48dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="Select Date"
+
+        android:inputType="date" />
+
+</LinearLayout>
