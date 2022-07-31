@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     fun calendarText(year:Int, month:Int, days:Int){
         val textViewCalendar: TextView = findViewById(R.id.textView8)
         val textViewMinutes: TextView = findViewById(R.id.textView10)
+        val textViewHours: TextView = findViewById(R.id.textView12)
         textViewCalendar.setText("$days.${month+1}.$year")
         textViewCalendar.visibility = View.VISIBLE
 
@@ -43,12 +44,17 @@ class MainActivity : AppCompatActivity() {
 
         selectedDate?.let{
             val selectedDateInMinutes = selectedDate.time/60000
+            val selectedDateInHours = selectedDateInMinutes/60
             val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
             currentDate.let {
                 val currentDateInMinutes = currentDate.time/60000
                 val ageInMinutes = currentDateInMinutes - selectedDateInMinutes
+                val currentDateInHours = currentDateInMinutes/60
+                val ageInHours = currentDateInHours - selectedDateInHours
                 textViewMinutes.setText(ageInMinutes.toString())
                 textViewMinutes.visibility = View.VISIBLE
+                textViewHours.setText(ageInHours.toString())
+                textViewHours.visibility = View.VISIBLE
             }
 
         }
