@@ -39,14 +39,19 @@ class MainActivity : AppCompatActivity() {
         textViewCalendar.visibility = View.VISIBLE
 
         val sdf = SimpleDateFormat("dd/M/yyyy", Locale.ENGLISH)
-        val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
-        val currentDateInMinutes = currentDate.time/60000
         val selectedDate = sdf.parse("$days/${month+1}/$year")
-        val selectedDateInMinutes = selectedDate.time/60000
+        selectedDate?.let{
+            val selectedDateInMinutes = selectedDate.time/60000
+            val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
+            currentDate.let {
+                val currentDateInMinutes = currentDate.time/60000
+                val ageInMinutes = currentDateInMinutes - selectedDateInMinutes
+                textViewMinutes.setText(ageInMinutes.toString())
+                textViewMinutes.visibility = View.VISIBLE
+            }
 
-        val ageInMinutes = currentDateInMinutes - selectedDateInMinutes
-        textViewMinutes.setText(ageInMinutes.toString())
-        textViewMinutes.visibility = View.VISIBLE
+        }
+
     }
 
 
